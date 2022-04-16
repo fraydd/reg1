@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use \App\Models\usuario;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //Sin paginación
+        /* $usuar=usuario::all();
+        return view('home',compact('usuar')); */
+
+        //Con paginación
+        $usuar=usuario::paginate(5);
+        return view('home',compact('usuar')); 
     }
 }
