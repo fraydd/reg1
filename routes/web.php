@@ -13,6 +13,8 @@ use App\Http\Controllers\UsuarioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('usuario.index', [App\Http\Controllers\UsuarioController::class, 'index'])->name('uusers');
+
 Route::resource('usuario',UsuarioController::class)->middleware('auth');
 
 Route::get('/', function () {
@@ -25,5 +27,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('estadisticas', [App\Http\Controllers\EstadisticasController::class, 'index']);
 Route::get('acercade', [App\Http\Controllers\AcercadeController::class, 'index']);
 Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'index']);
+
+
+
+
 
 

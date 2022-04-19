@@ -41,10 +41,11 @@
             @endif
     <div align="center" >
         <img src="images/home.png" alt="aaa" width="1000" height="300"> 
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sed laboriosam eum minus, quaerat consequatur voluptatem in numquam, dolor aliquam ducimus quod modi magnam reprehenderit non, fugit a laborum dicta.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem numquam veritatis velit dolores magnam fugiat fugit? Sapiente, voluptatum sint, molestiae impedit porro, aliquid ut eius mollitia quidem illum unde quibusdam!</p>
     </div>
     
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sed laboriosam eum minus, quaerat consequatur voluptatem in numquam, dolor aliquam ducimus quod modi magnam reprehenderit non, fugit a laborum dicta.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem numquam veritatis velit dolores magnam fugiat fugit? Sapiente, voluptatum sint, molestiae impedit porro, aliquid ut eius mollitia quidem illum unde quibusdam!</p>
+    
 
     </body>
 </html>

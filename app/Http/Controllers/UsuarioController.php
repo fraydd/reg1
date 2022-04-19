@@ -12,9 +12,21 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('usuarios.index'); 
+        $Nombre1=$request->get('Nombre1');
+        $Apellido1=$request->get('Apellido1');
+        $edad=$request->get('edad');
+
+
+
+        $uusers=usuario::orderBy('id','DESC')
+            ->name($Nombre1)
+            ->apellido($Apellido1)
+            ->edad($edad)
+            ->paginate(10);
+
+        return view('usuarios.index',compact('uusers')); 
     }
 
     /**
