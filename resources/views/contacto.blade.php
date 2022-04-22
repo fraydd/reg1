@@ -11,7 +11,11 @@
 
 </head>
 <body>
+<div class="container" style="height: 400px; border: 1px solid #000; background: #fff"> 
     <h1>Contacto</h1>
+    <br>
+    
+</div>
 </body>
 </html>
 @endsection

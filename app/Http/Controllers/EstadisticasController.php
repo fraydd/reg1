@@ -23,6 +23,11 @@ class EstadisticasController extends Controller
      */
     public function index()
     {
+        
         return view('estadisticas');
+        //return "hola";
+    }
+    public function graph(Request $request){
+        
     }
 }

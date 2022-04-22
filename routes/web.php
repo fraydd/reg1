@@ -24,12 +24,6 @@ Route::get('/', function () {
 Auth::routes();//['register'=> false]
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('estadisticas', [App\Http\Controllers\EstadisticasController::class, 'index']);
+Route::get('/estadisticas', [App\Http\Controllers\EstadisticasController::class, 'index']);
 Route::get('acercade', [App\Http\Controllers\AcercadeController::class, 'index']);
 Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'index']);
-
-
-
-
-
-

@@ -44,7 +44,7 @@
         <div>
             <hr>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 ">
             <table class="table table-hover ">
             <thead>
                         <th>Id</th>
@@ -59,6 +59,8 @@
                     <td>{{ $user->Nombre1}}</td>
                     <td>{{ $user->Apellido1}}</td>
                     <td>{{ $user->edad}}</td>
+                    <td><button>Eliminar</button></td>
+                    <td><button>Info</button></td>
 
                     </tr>
                     @endforeach

@@ -17,7 +17,7 @@ class UsuariosSeeder extends Seeder
     {
       /*   $data=[
             'Nombre1'=>'fredy',
-            'Nombre2'=>'albeiro',
+            'Nombre2'=>'nA',
             'Apellido1'=>'chaves',
             'Apellido2'=>'burbano',
             'Tel'=>'3155403787',

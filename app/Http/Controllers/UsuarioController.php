@@ -51,6 +51,9 @@ class UsuarioController extends Controller
         if($request->hasFile('foto')){
             $data['foto']=$request->file('foto')->store('uploads','public');
         }
+        if($request['Nombre1']==null){
+            $Nombre1='NA';
+        }
         usuario::insert($data);
         return view('usuarios.create');
     }

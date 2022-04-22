@@ -19,8 +19,8 @@ class UsuarioFactory extends Factory
         return [
             'Nombre1'=>$this->faker->name(),
             'Nombre2'=>$this->faker->name(),
-            'Apellido1'=>$this->faker->word(),
-            'Apellido2'=>$this->faker->word(),
+            'Apellido1'=>$this->faker->lastName(),
+            'Apellido2'=>$this->faker->lastName(),
             'Tel'=>$this->faker->phoneNumber(),
             'Direccion'=>$this->faker->word(),
             'edad'=>$this->faker->numberBetween(1,100),

@@ -11,8 +11,24 @@
 
 </head>
 <body>
-    <h1>Esradisticas</h1>
+    <h1>Estadisticas</h1>
     <p>Aquí se muestran gráficas</p>
-</body>
+</body>   
 </html>
+<!-- <form action="POST" action="estadisticas/graph" id="form1">
+    @csrf
+    <input type="text" name="id" value="1">
+    <input type="mail" name="mail">
+</form> -->
+
+<!-- <script>
+    $.ajax({
+        url: 'estadisticas/graph',
+        method: 'POST',
+        data: $("#form1").serialize()
+
+    }).done(function(res){
+        alert(res);
+    });
+</script> -->
 @endsection
