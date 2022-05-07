@@ -53,6 +53,12 @@ protected $fillable=[
     public function estados(){
     return $this->belongsTo(estado::class);
     }
+
+    // Relacion muchos a muchos usuario-addiction
+
+    public function addictions(){
+        return $this->belongsToMany('App\models\addiction');
+    }
 }
 
 

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             IdentificacionSeeder::class,
             PaisSeeder::class,
             EstadosSeeder::class,
+            AddictionsSeeder::class,
             
         ]);
         //\App\Models\User::factory(5)->create();
