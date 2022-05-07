@@ -27,13 +27,15 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
+                        <th>Identificación</th>
                     </thead>
                     <tbody>
                         @foreach($usuar as $usu)
                             <tr>
                                 <td>{{$usu->id}}</td>
-                                <td>{{$usu->Nombre1}}</td>
-                                <td>{{$usu->Apellido1}}</td>
+                                <td>{{$usu->nombre}}</td>
+                                <td>{{$usu->apellido}}</td>
+                                <td>{{$usu->numeroid}}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -41,9 +43,7 @@
                 {!! $usuar->links() !!}
             </div>
         </div>
-    </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-
-  </body>
+        </div>
+    </body>
 </html>
 @endsection

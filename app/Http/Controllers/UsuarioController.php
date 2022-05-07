@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\usuario;
+use App\usuarios;
 use Illuminate\Http\Request;
+use App\Models\identificacion;
 
 class UsuarioController extends Controller
 {
@@ -12,18 +14,20 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+
+    public function index(Request $request)   // busqueda y filtrado
     {
-        $Nombre1=$request->get('Nombre1');
-        $Apellido1=$request->get('Apellido1');
-        $edad=$request->get('edad');
+        $nombre=$request->get('nombre');
+        $apellido=$request->get('apellido');
+        $numeroid=$request->get('numeroid');
 
 
 
-        $uusers=usuario::orderBy('id','DESC')
-            ->name($Nombre1)
-            ->apellido($Apellido1)
-            ->edad($edad)
+        $uusers=usuario::orderBy('id','ASC')
+            ->nombre($nombre)
+            ->apellido($apellido)
+            ->numeroid($numeroid)
+            //->scopeNumero($numero)
             ->paginate(10);
 
         return view('usuarios.index',compact('uusers')); 
@@ -36,7 +40,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        $identificaciones=identificacion::all();
+        return view('usuarios.create',compact('identificaciones'));
     }
 
     /**
@@ -47,15 +52,19 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $data=request()->except('_token');
+/*         $data=request()->except('_token');
         if($request->hasFile('foto')){
             $data['foto']=$request->file('foto')->store('uploads','public');
         }
-        if($request['Nombre1']==null){
-            $Nombre1='NA';
+        if($request['nombre']==null){
+            $nombre='NA';
         }
-        usuario::insert($data);
-        return view('usuarios.create');
+        usuario::insert($data); */
+     
+        usuario::create($request->all());
+       
+        $identificaciones=identificacion::all();
+        return view('usuarios.create',compact('identificaciones'));
     }
 
     /**

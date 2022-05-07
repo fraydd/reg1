@@ -34,34 +34,73 @@ function tabular(e,obj)
             <div class="col">
                 <label for="Nombre">Nombres</label>
                 <br>
-                    <input type="string" name="Nombre1" id="Nombre1" placeholder="Primer nombre" autofocus onkeypress="return tabular(event,this)" >
+                    <input type="string" name="nombre" id="nombre" placeholder="Primer nombre" autofocus onkeypress="return tabular(event,this)"required >
                 <br>
                 <br>
-                    <input type="string" name="Nombre2" id="Nombre2" placeholder="Segundo nombre"onkeypress="return tabular(event,this)"required>
+                    <input type="string" name="nombre_2" id="nombre_2" placeholder="Segundo nombre"onkeypress="return tabular(event,this)">
                 <br>
                 <label for="Nombre">Apellidos</label>
                 <br>
-                    <input type="string" name="Apellido1" id="Apellido1" placeholder="Primer Apellido"onkeypress="return tabular(event,this)"required>
+                    <input type="string" name="apellido" id="apellido" placeholder="Primer Apellido"onkeypress="return tabular(event,this)"required>
                 <br>
                 <br>
-                    <input type="string" name="Apellido2" id="Apellido2" placeholder="Segundo Apellido"onkeypress="return tabular(event,this)"required>
+                    <input type="string" name="apellido_2" id="apellido_2" placeholder="Segundo Apellido"onkeypress="return tabular(event,this)"required>
+                <br>
+                <br>
+                <label for="Nombre">Edad</label>
+                <br>
+                    <input type="number" name="edad" id="edad" onkeypress="return tabular(event,this)"required>
+                <br>
+                <label for="Nombre">Teléfono</label>
+                <br>
+                    <input type="tel" name="telefono" id="telefono" onkeypress="return tabular(event,this)"required>
                 <br>
             </div>
 
 
             <div class="col" >
-                <label for="Nombre">Teléfono</label>
-                <br>
-                    <input type="tel" name="Tel" id="Tel" onkeypress="return tabular(event,this)"required>
-                <br>
+
                 <label for="Nombre">Dirección</label>
                 <br>
                     <input type="string" name="Direccion" id="Direccion" onkeypress="return tabular(event,this)"required>
                 <br>
-                <label for="Nombre">Edad</label>
+
+                <label for="Nombre">Hijos</label>
                 <br>
-                    <input type="number" name="Edad" id="Edad" onkeypress="return tabular(event,this)"required>
+                    <input type="number" name="cantidad_hijos" id="cantidad_hijos" onkeypress="return tabular(event,this)"required>
                 <br>
+                <br>
+
+
+
+                <label for="Nombre">Identificación</label>
+                <br>
+                <!-- <input type="string" name="identificacion_id" id="identificacion_id" placeholder="Tipo de ID"onkeypress="return tabular(event,this)"required> -->
+                <select   name="identificacion_id" id="identificacion_id"onkeypress="return tabular(event,this)"required>
+                            <option value="">  --- Tipo de docuento---  </option>
+                            @foreach($identificaciones as $identificacion)
+                             <option value="{{ $identificacion['id'] }}">  {{ $identificacion['tipo'] }}  </option>
+                            @endforeach
+                               
+                            
+                    
+                </select> 
+                <br>
+
+                
+                <br>
+                <input type="string" name="numeroid" id="numeroid" placeholder="Numero ID"onkeypress="return tabular(event,this)"required>
+                <br>
+
+                <br>
+                    <input type="string" name="estado_id" id="estado_id" placeholder="Estado"onkeypress="return tabular(event,this)"required>               
+                    
+                <br>
+
+                <!-- @livewire('select-component')  -->
+
+
+
             </div>
                 
             

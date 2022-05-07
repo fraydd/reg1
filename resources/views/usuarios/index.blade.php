@@ -23,13 +23,13 @@
             </div>
             <div class="col">
                 {{Form::open(['route'=>'uusers','method' => 'GET'])}}
-                    {{Form::text('Nombre1',null,['class'=>'form-control','placeholder'=>'Nombre'])}}
+                    {{Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre'])}}
             </div>
             <div class="col">
-                    {{Form::text('Apellido1',null,['class'=>'form-control','placeholder'=>'Apellido'])}}
+                    {{Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Apellido'])}}
             </div>
             <div class="col">
-                    {{Form::text('edad',null,['class'=>'form-control','placeholder'=>'edad'])}}
+                    {{Form::text('numeroid',null,['class'=>'form-control','placeholder'=>'Identificación'])}}
             </div>      
             <div class="col">
                 <button type="submit" class="btn btn-outline-dark">
@@ -47,18 +47,18 @@
         <div class="col-md-8 ">
             <table class="table table-hover ">
             <thead>
-                        <th>Id</th>
+                        <th>N°</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Edad</th>
+                        <th>Identificación</th>
                     </thead>
                 <tbody>
                     @foreach($uusers as $user)
                     <tr>
                     <td>{{ $user->id}}</td>
-                    <td>{{ $user->Nombre1}}</td>
-                    <td>{{ $user->Apellido1}}</td>
-                    <td>{{ $user->edad}}</td>
+                    <td>{{ $user->nombre}}</td>
+                    <td>{{ $user->apellido}}</td>
+                    <td>{{ $user->numeroid}}</td>
                     <td><button>Eliminar</button></td>
                     <td><button>Info</button></td>
 
