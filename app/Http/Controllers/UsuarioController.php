@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\estado;
 use App\Models\usuario;
 use App\usuarios;
 use Illuminate\Http\Request;
 use App\Models\identificacion;
+use App\Models\pais;
+use Illuminate\Auth\Access\Gate;
+use App\Services\Paises;
 
 class UsuarioController extends Controller
 {
@@ -38,10 +42,18 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        /* abort_unless(\Gate::allows('Create'),401); */
         $identificaciones=identificacion::all();
-        return view('usuarios.create',compact('identificaciones'));
+        
+        $paises=pais::all()/* ->pluck('nombre','id')->prepend('Seleccione un país') */;
+        $estados=estado::all();
+        return view('usuarios.create',compact('identificaciones','paises','estados'));
+    }
+
+    public function getEstados($id){
+        return estado::where('pais_id',$id)->get();
     }
 
     /**
@@ -61,11 +73,15 @@ class UsuarioController extends Controller
         }
         usuario::insert($data); */
      
-        usuario::create($request->all());
-       
+        usuario::create($request->all()); //  si algo sale mal
+
+        $paises=pais::all();
+        $estados=estado::all();
         $identificaciones=identificacion::all();
-        return view('usuarios.create',compact('identificaciones'));
+        return view('usuarios.create',compact('identificaciones','paises','estados'));
     }
+
+
 
     /**
      * Display the specified resource.

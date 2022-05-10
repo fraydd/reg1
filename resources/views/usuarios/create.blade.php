@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script> // este script hace que tabule el enter !!!
 function tabular(e,obj) 
@@ -25,7 +26,7 @@ function tabular(e,obj)
 
 <body>
 
-<div class="container" style="height: 400px; border: 1px solid #000; background: #fff"> 
+<div class="container" style="height: 600px; border: 1px solid #000; background: #fff"> 
     <form action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
         @csrf
         <div class="row" > 
@@ -94,12 +95,25 @@ function tabular(e,obj)
 
                 <br>
                     <input type="string" name="estado_id" id="estado_id" placeholder="Estado"onkeypress="return tabular(event,this)"required>               
+                    <br>
+
+
+                    <label for="pais">País</label><br>
                     
-                <br>
-
-                <!-- @livewire('select-component')  -->
-
-
+                    <select name="pais_id" id="select-pais">
+                        <option value="">-- País --</option>
+                        @foreach($paises as $pais)
+                            <option value="{{$pais['id']}}" >
+                                {{$pais->nombre}}
+                            </option>
+                        @endforeach
+                    </select><br>
+                
+                
+                    <label for="ciudad">Estado</label><br>
+                    <select name="estado_id" id="select-estado" style="height: 25px; width: 200px; ">
+                    <option value="">-- Estado --</option>
+                    </select>
 
             </div>
                 
@@ -122,5 +136,12 @@ function tabular(e,obj)
 
         </div>
     </form>  
+
 </div>
 @endsection
+
+@section('script')
+
+<script src="/reg1\public\js\admin\usuario\crear.js"> </script>
+@endsection
+

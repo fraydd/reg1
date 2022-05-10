@@ -10,7 +10,7 @@ class pais extends Model
     use HasFactory;
     public function estados(){
     
-        return $this->hasOne(estado::class);
+        return $this->hasMany(estado::class);
         
     }
 }

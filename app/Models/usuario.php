@@ -54,6 +54,10 @@ protected $fillable=[
     return $this->belongsTo(estado::class);
     }
 
+    public function paises(){
+        return $this->belongsTo(pais::class);
+        }
+
     // Relacion muchos a muchos usuario-addiction
 
     public function addictions(){

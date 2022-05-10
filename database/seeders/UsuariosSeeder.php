@@ -16,18 +16,7 @@ class UsuariosSeeder extends Seeder
      */
     public function run()
     {
-        //factory(App\models\usuario::class,100)->create();
-      /*   $data=[
-            'Nombre1'=>'fredy',
-            'Nombre2'=>'nA',
-            'Apellido1'=>'chaves',
-            'Apellido2'=>'burbano',
-            'Tel'=>'3155403787',
-            'Direccion'=>'barcelona',
-            'edad'=>21,
-            'foto'=>'public/images/home',
-        ];
-        DB::table('usuarios')->insert($data); */
+
         \App\Models\usuario::factory(5)->create();
     }
 }

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +15,7 @@
 
     <title>Home</title>
   </head>
+
   <body>
       <div class="d-flex justify-content-center">
 

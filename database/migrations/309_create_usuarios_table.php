@@ -33,6 +33,11 @@ return new class extends Migration
                 ->references('id')
                 ->on('estados'); 
 
+            $table->unsignedBigInteger('pais_id');
+            $table->foreign('pais_id')
+                ->references('id')
+                ->on('pais'); 
+
             $table->unsignedBigInteger('identificacion_id');
             $table->foreign('identificacion_id')
                 ->references('id')

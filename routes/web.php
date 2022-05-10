@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
+use App\Models\usuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use App\Http\Controllers\UsuarioController;
 |
 */
 Route::get('usuario.index', [App\Http\Controllers\UsuarioController::class, 'index'])->name('uusers');
+Route::get('/usuario/{id}', [App\Http\Controllers\UsuarioController::class, 'create']);
+
 
 Route::resource('usuario',UsuarioController::class)->middleware('auth');
 
@@ -27,3 +30,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/estadisticas', [App\Http\Controllers\EstadisticasController::class, 'index']);
 Route::get('acercade', [App\Http\Controllers\AcercadeController::class, 'index']);
 Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'index']);
+

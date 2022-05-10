@@ -36,7 +36,7 @@ DB::table('estados')->insert($data);
 DB::table('estados')->insert($data); $data=[
 'id'=>3, 
 'pais_id'=>3, 
-'nombre'=>'Región de Nakhichevanskaya' 
+'nombre'=>'Región de Nakh' 
 ] ;
 
 
@@ -836,7 +836,7 @@ DB::table('estados')->insert($data); $data=[
 DB::table('estados')->insert($data); $data=[
 'id'=>103,
 'pais_id'=>33,
-'nombre'=>'Turkish controlled area'
+'nombre'=>'Turkish'
 ] ;
 
 
@@ -1476,7 +1476,7 @@ DB::table('estados')->insert($data); $data=[
 DB::table('estados')->insert($data); $data=[
 'id'=>183,
 'pais_id'=>50,
-'nombre'=>'Saint-Petersburg and Region'
+'nombre'=>'Saint-Petersburg'
 ] ;
 
 
