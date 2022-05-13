@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
             PaisSeeder::class,
             EstadosSeeder::class,
             AddictionsSeeder::class,
+            SexSeeder::class,
+            GenderSeeder::class,
+            MartialSeeder::class,
             
         ]);
         //\App\Models\User::factory(5)->create();

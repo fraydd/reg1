@@ -15,39 +15,41 @@ class AddictionsSeeder extends Seeder
      */
     public function run()
     {
-
-$data=['id'=>1,'nombre'=>'Alcohol'] ;        
+$data=['id'=>1,'nombre'=>'Ninguna'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>2,'nombre'=>'Nicotina'] ;        
+$data=['id'=>2,'nombre'=>'Alcohol'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>3,'nombre'=>'Psicofármacos'] ;        
+$data=['id'=>3,'nombre'=>'Nicotina'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>4,'nombre'=>'Cafeína'] ;      
+$data=['id'=>4,'nombre'=>'Psicofármacos'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>5,'nombre'=>'Alucinógenos'] ;        
+$data=['id'=>5,'nombre'=>'Cafeína'] ;      
 DB::table('addictions')->insert($data);
 
-$data=['id'=>6,'nombre'=>'Esteroides'] ;        
+$data=['id'=>6,'nombre'=>'Cocaína'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>7,'nombre'=>'Cannabis'] ;        
+$data=['id'=>7,'nombre'=>'Alucinógenos'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>8,'nombre'=>'Pornografía y sexo'] ;        
+$data=['id'=>8,'nombre'=>'Esteroides'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>9,'nombre'=>'Juego'] ;        
+$data=['id'=>9,'nombre'=>'Cannabis'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>10,'nombre'=>'Comida'] ;        
+
+$data=['id'=>10,'nombre'=>'Juego'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>11,'nombre'=>'Nuevas tecnologías'] ;        
+$data=['id'=>11,'nombre'=>'Comida'] ;        
 DB::table('addictions')->insert($data);
+
+
 
 $data=['id'=>12,'nombre'=>'Compras'] ;        
 DB::table('addictions')->insert($data);
@@ -55,8 +57,14 @@ DB::table('addictions')->insert($data);
 $data=['id'=>13,'nombre'=>'Trabajo'] ;        
 DB::table('addictions')->insert($data);
 
-$data=['id'=>14,'nombre'=>'Cocaína'] ;        
+$data=['id'=>14,'nombre'=>'Pornografía y sexo'] ;        
 DB::table('addictions')->insert($data);
+
+$data=['id'=>15,'nombre'=>'Nuevas tecnologías'] ;        
+DB::table('addictions')->insert($data);
+
+
+
 
 
     }

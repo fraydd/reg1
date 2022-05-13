@@ -2,6 +2,7 @@
 @section('content')
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 <script> // este script hace que tabule el enter !!!
 function tabular(e,obj) 
         {
@@ -26,111 +27,143 @@ function tabular(e,obj)
 
 <body>
 
-<div class="container" style="height: 600px; border: 1px solid #000; background: #fff"> 
-    <form action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
+<div class="container" style="height: 100vh ;"> 
+    <form class="form" action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
         @csrf
         <div class="row" > 
 
-
             <div class="col">
-                <label for="Nombre">Nombres</label>
-                <br>
-                    <input type="string" name="nombre" id="nombre" placeholder="Primer nombre" autofocus onkeypress="return tabular(event,this)"required >
-                <br>
-                <br>
-                    <input type="string" name="nombre_2" id="nombre_2" placeholder="Segundo nombre"onkeypress="return tabular(event,this)">
-                <br>
-                <label for="Nombre">Apellidos</label>
-                <br>
-                    <input type="string" name="apellido" id="apellido" placeholder="Primer Apellido"onkeypress="return tabular(event,this)"required>
-                <br>
-                <br>
-                    <input type="string" name="apellido_2" id="apellido_2" placeholder="Segundo Apellido"onkeypress="return tabular(event,this)"required>
-                <br>
-                <br>
-                <label for="Nombre">Edad</label>
-                <br>
-                    <input type="number" name="edad" id="edad" onkeypress="return tabular(event,this)"required>
-                <br>
-                <label for="Nombre">Teléfono</label>
-                <br>
-                    <input type="tel" name="telefono" id="telefono" onkeypress="return tabular(event,this)"required>
-                <br>
-            </div>
 
+                    <p>Nombres (*): <input class="form-control" type="string" name="nombres" id="nombres" placeholder="Nombres" autofocus onkeypress="return tabular(event,this)"required ></p>
 
-            <div class="col" >
+                    <p> Apellidos(*):<input class="form-control" type="string" name="apellidos" id="apellidos" placeholder="Apellidos"onkeypress="return tabular(event,this)"required></p>
 
-                <label for="Nombre">Dirección</label>
-                <br>
-                    <input type="string" name="Direccion" id="Direccion" onkeypress="return tabular(event,this)"required>
-                <br>
+                    <p>Fecha de nacimiento (*): <input class="date form-control" type="text"  name="fechan" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)"></p>
 
-                <label for="Nombre">Hijos</label>
-                <br>
-                    <input type="number" name="cantidad_hijos" id="cantidad_hijos" onkeypress="return tabular(event,this)"required>
-                <br>
-                <br>
+                    <div class="form-group">
+                        <p>Teléfono:<input class="form-control" placeholder="Número" type="tel" name="telefono" id="telefono" onkeypress="return tabular(event,this)"required></p>
+                    </div>
 
+                    <div class="form-group">
+                        <p class="">Identificación (*):</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                                    <select  class="form-select" name="identificacion_id" id="identificacion_id"onkeypress="return tabular(event,this)"required>
+                                        <option class="text-center" value="">  - Tipo -  </option>
+                                        @foreach($identificaciones as $identificacion)
+                                            <option value="{{ $identificacion['id'] }}">  {{ $identificacion['tipo'] }}  </option>
+                                        @endforeach
+                                    </select> 
+                                    
+                            </div> 
+                            <div class="col-md-6">
+                                <input  class="form-control"  type="string" name="numeroid" id="numeroid" placeholder="Numero ID"onkeypress="return tabular(event,this)"required>
+                            </div>
+                        </div>
+                    </div>
 
-
-                <label for="Nombre">Identificación</label>
-                <br>
-                <!-- <input type="string" name="identificacion_id" id="identificacion_id" placeholder="Tipo de ID"onkeypress="return tabular(event,this)"required> -->
-                <select   name="identificacion_id" id="identificacion_id"onkeypress="return tabular(event,this)"required>
-                            <option value="">  --- Tipo de docuento---  </option>
-                            @foreach($identificaciones as $identificacion)
-                             <option value="{{ $identificacion['id'] }}">  {{ $identificacion['tipo'] }}  </option>
-                            @endforeach
-                               
-                            
-                    
-                </select> 
-                <br>
-
-                
-                <br>
-                <input type="string" name="numeroid" id="numeroid" placeholder="Numero ID"onkeypress="return tabular(event,this)"required>
-                <br>
-
-                <br>
-                    <input type="string" name="estado_id" id="estado_id" placeholder="Estado"onkeypress="return tabular(event,this)"required>               
                     <br>
 
-
-                    <label for="pais">País</label><br>
-                    
-                    <select name="pais_id" id="select-pais">
-                        <option value="">-- País --</option>
-                        @foreach($paises as $pais)
-                            <option value="{{$pais['id']}}" >
-                                {{$pais->nombre}}
-                            </option>
-                        @endforeach
-                    </select><br>
-                
-                
-                    <label for="ciudad">Estado</label><br>
-                    <select name="estado_id" id="select-estado" style="height: 25px; width: 200px; ">
-                    <option value="">-- Estado --</option>
-                    </select>
-
+                    <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Hijos:</label>
+                  
+                            <input class="form-control" type="number" name="cantidad_hijos" id="cantidad_hijos" placeholder="Cantidad"  onkeypress="return tabular(event,this)"required>
+                            
+         
+          
+                    </div>
             </div>
-                
+
             
             <div class="col" >
-                <div class="container" style="height: 200px;border: 1px solid #000 ;">
+                <div class="form-group">
+                    <p class="">Lugar de nacimiento (*):</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-select" name="pais_id" id="select-pais">
+                                <option class="text-center" value="">- País -</option>
+                                @foreach($paises as $pais)
+                                    <option value="{{$pais['id']}}" >
+                                        {{$pais->nombre}}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select"  name="estado_id" id="select-estado" >
+                                <option  class="text-center" value="">- Estado -</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
 
+                <div class="form-group">
+                    <p class="">Lugar donde habita (*):</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control" placeholder="Ciudad" type="string" name="ciudad" id="ciudad" onkeypress="return tabular(event,this)"required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input class="form-control" placeholder="Comuna" type="string" name="Direccion" id="Direccion" onkeypress="return tabular(event,this)"required>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <br>
+                    <div class="form-group">
+                        <p class="">Adicciones (*): </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                            <input class="date form-control" type="text"  name="fechaa" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)">
+
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select"  name="addiction_id" id="addiction_id"onkeypress="return tabular(event,this)">
+                                        <option class="text-center" value="">  - Adicciones -  </option>
+                                        @foreach($addictions as $addiction)
+                                            <option value="{{ $addiction['id'] }}">  {{ $addiction['nombre'] }}  </option>
+                                        @endforeach
+                                </select> 
+                            </div>
+
+                        
+                        </div>
+                    </div>
+                    <br>
+                    <select  class="form-select" name="gender_id" id="gender_id"onkeypress="return tabular(event,this)">
+                        <option class="text-center" value="">  - Género -  </option>
+                        @foreach($genders as $gender)
+                            <option value="{{ $gender['id'] }}">  {{ $gender['tipo'] }}  </option>
+                        @endforeach
+
+                    </select> 
+                    <br>
+                    <select class="form-select"  name="sex_id" id="sex_id"onkeypress="return tabular(event,this)">
+                        <option class="text-center" value="">  - Sexo -  </option>
+                        @foreach($sexes as $sex)
+                            <option value="{{ $sex['id'] }}">  {{ $sex['tipo'] }}  </option>
+                        @endforeach
+
+                    </select> 
+                    <br>
+                    <select class="form-select"  name="martial_id" id="martial_id"onkeypress="return tabular(event,this)">
+                        <option class="text-center" value="">  - Estado civil -  </option>
+                        @foreach($martials as $martial)
+                            <option value="{{ $martial['id'] }}">  {{ $martial['tipo'] }}  </option>
+                        @endforeach
+
+                    </select> 
+                    <br>
+            </div>            
+            <div class="col" >
                 <label for="Nombre">Fotografía</label>
+                <input class="form-control" type="file" name="foto" id="foto" accept="image/*" required>
                 <br>
-                <input type="file" name="foto" id="foto" accept="image/*" required>
-                <br>
-
-                </div>
-                <div class="container" style="border: 1px solid #000 ;">
-                    <input type="submit" value="Registrar" class="btn btn-outline-dark">
-                
-                </div>
+                <input  type="submit" value="Registrar" class="float-end btn btn-outline-success">
             </div>
 
 
@@ -143,5 +176,8 @@ function tabular(e,obj)
 @section('script')
 
 <script src="/reg1\public\js\admin\usuario\crear.js"> </script>
+
 @endsection
+
+
 

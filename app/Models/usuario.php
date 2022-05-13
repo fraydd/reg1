@@ -12,29 +12,33 @@ class usuario extends Model
     use HasFactory;
 /* Protección */
 protected $fillable=[
-        'nombre',
-        'nombre_2',
-        'apellido',
-        'apellido_2',
-        'edad',
+        'nombres',
+        'apellidos',
+        'fechan',
         'foto',
         'Direccion',
         'telefono',
         'cantidad_hijos',
         'numeroid',
+        'ciudad',
+        'fechaa',
         'estado_id',
-        'identificacion_id'
+        'pais_id',
+        'identificacion_id',
+        'gender_id',
+        'sex_id',
+        'martial_id'
 ];
 
     /* Query scopes para realizar filtrado*/
     public function scopeNombre($query, $nombre){
         if($nombre)
-            return $query->orWhere('nombre','LIKE',"%$nombre%");
+            return $query->orWhere('nombres','LIKE',"%$nombre%");
 
     }
     public function scopeApellido($query, $apellido){
         if($apellido){
-            return $query->where('apellido','LIKE',"%$apellido%");
+            return $query->where('apellidos','LIKE',"%$apellido%");
         }
     }
     public function scopeNumeroid($query, $numeroid){
@@ -58,6 +62,21 @@ protected $fillable=[
         return $this->belongsTo(pais::class);
         }
 
+    public function genders(){
+        return $this->belongsTo(gender::class);
+        }
+    
+    public function sexes(){
+        return $this->belongsTo(sex::class);
+        }
+
+    public function martials(){
+        return $this->belongsTo(martial::class);
+        }
+
+    public function educations(){
+        return $this->belongsTo(education::class);
+        }
     // Relacion muchos a muchos usuario-addiction
 
     public function addictions(){

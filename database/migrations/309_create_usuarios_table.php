@@ -15,16 +15,17 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('nombre_2');
-            $table->string('apellido');
-            $table->string('apellido_2');
-            $table->integer('edad');
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->date('fechan')->nullable();
             $table->string('foto');
-            $table->string('Direccion');
-            $table->string('telefono','10');
-            $table->integer('cantidad_hijos');
+            $table->string('Direccion')->nullable();
+            $table->string('telefono','13')->nullable();
+            $table->integer('cantidad_hijos')->nullable();
             $table->string('numeroid');
+            $table->string('ciudad');
+            $table->date('fechaa');
+
 
             $table->timestamps();
 
@@ -42,6 +43,24 @@ return new class extends Migration
             $table->foreign('identificacion_id')
                 ->references('id')
                 ->on('identificacions');
+
+
+            $table->unsignedBigInteger('gender_id');
+            $table->foreign('gender_id')
+                ->references('id')
+                ->on('genders');
+
+            $table->unsignedBigInteger('sex_id');
+            $table->foreign('sex_id')
+                ->references('id')
+                ->on('sexes');
+
+            $table->unsignedBigInteger('martial_id');
+            $table->foreign('martial_id')
+                ->references('id')
+                ->on('martials');
+
+
 
 
             

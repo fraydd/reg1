@@ -27,10 +27,28 @@
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<!-- Datepicker -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<!--   <link rel="stylesheet" href="//code.jqueryui.com/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".date" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '-100:+0',
+        dateFormat: "yy-mm-dd",
+        /* minDate: new Date(1999), */
+        
+    });
+  } );
+  </script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                 <!-- <img src="assets/icons/home.svg" alt="Home" width="30" height="30">  -->

@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\addiction;
 use App\Models\estado;
+use App\Models\gender;
 use App\Models\usuario;
 use App\usuarios;
 use Illuminate\Http\Request;
 use App\Models\identificacion;
+use App\Models\martial;
 use App\Models\pais;
+use App\Models\sex;
 use Illuminate\Auth\Access\Gate;
 use App\Services\Paises;
 
@@ -21,15 +25,15 @@ class UsuarioController extends Controller
 
     public function index(Request $request)   // busqueda y filtrado
     {
-        $nombre=$request->get('nombre');
-        $apellido=$request->get('apellido');
+        $nombres=$request->get('nombres');
+        $apellidos=$request->get('apellidos');
         $numeroid=$request->get('numeroid');
 
 
 
         $uusers=usuario::orderBy('id','ASC')
-            ->nombre($nombre)
-            ->apellido($apellido)
+            ->nombre($nombres)
+            ->apellido($apellidos)
             ->numeroid($numeroid)
             //->scopeNumero($numero)
             ->paginate(10);
@@ -49,7 +53,18 @@ class UsuarioController extends Controller
         
         $paises=pais::all()/* ->pluck('nombre','id')->prepend('Seleccione un país') */;
         $estados=estado::all();
-        return view('usuarios.create',compact('identificaciones','paises','estados'));
+        $addictions=addiction::all();
+        $genders=gender::all();
+        $sexes=sex::all();
+        $martials=martial::all();
+        return view('usuarios.create',compact(  'identificaciones',
+                                                'paises',
+                                                'estados',
+                                                'addictions',
+                                                'genders',
+                                                'sexes',
+                                                'martials',
+                                            ));
     }
 
     public function getEstados($id){
@@ -73,12 +88,24 @@ class UsuarioController extends Controller
         }
         usuario::insert($data); */
      
-        usuario::create($request->all()); //  si algo sale mal
-
-        $paises=pais::all();
+        usuario::create($request->all()); 
+        
+/*         $paises=pais::all();
         $estados=estado::all();
         $identificaciones=identificacion::all();
-        return view('usuarios.create',compact('identificaciones','paises','estados'));
+        $addictions=addiction::all();
+        $genders=gender::all();
+        $sexes=sex::all();
+        $martials=martial::all();
+        return view('usuarios.create',compact(  'identificaciones',
+                                                'paises',
+                                                'estados',
+                                                'addictions',
+                                                'genders',
+                                                'sexes',
+                                                'martials',
+                                            )); */
+            return redirect()->back()->with('success','Usuario agregado');
     }
 
 

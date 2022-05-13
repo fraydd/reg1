@@ -20,6 +20,7 @@ class IdentificacionSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
+        
         $data1=[
             'tipo'=>'PAP',
             'desc'=>'Pasaporte'
