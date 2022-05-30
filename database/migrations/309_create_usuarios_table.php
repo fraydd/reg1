@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nombres');
             $table->string('apellidos');
-            $table->date('fechan')->nullable();
+            $table->date('fechan');
             $table->string('foto');
             $table->string('Direccion')->nullable();
             $table->string('telefono','13')->nullable();
             $table->integer('cantidad_hijos')->nullable();
             $table->string('numeroid');
-            $table->string('ciudad');
+            $table->string('ciudad')->nullable();
             $table->date('fechaa');
 
 

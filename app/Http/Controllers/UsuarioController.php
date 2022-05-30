@@ -87,6 +87,7 @@ class UsuarioController extends Controller
             'nombres'=>'required',
             'apellidos'=>'required',
             'fechan'=>'required',
+            
             'foto'=>'required',
             'numeroid'=>'required',
             'pais_id'=>'required',
@@ -96,7 +97,7 @@ class UsuarioController extends Controller
             'occupation_id'=>'required',
             'sex_id'=>'required',
             'martial_id'=>'required',
-            'foto'=>'required|image|mimes:jpeg,png,svg|max:1024'
+            'foto'=>'required|image|mimes:jpeg,png,svg,jpg|max:1000'
 
         ]);
         $usu=$request->all();

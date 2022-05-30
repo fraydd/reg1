@@ -32,87 +32,175 @@ function tabular(e,obj)
 
 <body>
 
-<div class="container" style="min-height: 100vh ;"> 
-    <form class="form" action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
+<div class="container " style="min-height: 100vh ;"> 
+<div class="card-header">
+        <h3>Registrar </h3>
+    </div>
+    <br>
+    <form class="form-floating " action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
         @csrf
         <div class="row" > 
 
             <div class="col">
 
-                    <p>Nombres (*): <input class="form-control" type="string" name="nombres" id="nombres" placeholder="Nombres" autofocus onkeypress="return tabular(event,this)"required ></p>
+                <div class="form-floating mb-6">
+                    <input class="form-control" type="string" name="nombres" id="nombres" value="{{old('nombres')}}" placeholder="Nombres" autofocus onkeypress="return tabular(event,this)" >
+                    <label for="nombres">Nombres *</label>
+                    @error('nombres')
+                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
+                    <br>
+                </div>
 
-                    <p> Apellidos(*):<input class="form-control" type="string" name="apellidos" id="apellidos" placeholder="Apellidos"onkeypress="return tabular(event,this)"required></p>
 
-                    <p>Fecha de nacimiento (*): <input class="date form-control" type="text"  name="fechan" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)"></p>
+                <div class="form-floating mb-6">
+                    <input class="form-control" type="string" name="apellidos" id="apellidos" value="{{old('apellidos')}}" placeholder="Apellidos"onkeypress="return tabular(event,this)">
+                    <label for="apellidos">Apellidos *</label>
+                    @error('apellidos')
+                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
+                    <br>
+                </div>
+
+
+                <div class="form-floating mb-6">
+                     <input class="date form-control" type="text"  name="fechan"  value="{{old('fechan')}}" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)">
+                     <label for="fechan">Fecha de nacimiento *</label> 
+                     @error('fechan')
+                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
+                    <br>
+                </div>
+
+                <div class="form-floating mb-6">
+                    <input class="form-control" placeholder="Número" type="tel" name="telefono" id="telefono"  value="{{old('telefono')}}"  onkeypress="return tabular(event,this)">                   
+                    <label for="telefono">Teléfono</label>
+                    <br>
+                </div>
+
 
                     <div class="form-group">
-                        <p>Teléfono:<input class="form-control" placeholder="Número" type="tel" name="telefono" id="telefono" onkeypress="return tabular(event,this)"required></p>
-                    </div>
-
-                    <div class="form-group">
-                        <p class="">Identificación (*):</p>
+                       <label for="identificacion_id">Identificación </label> 
                         <div class="row">
                             <div class="col-md-6">
-                                
-                                    <select  class="form-select" name="identificacion_id" id="identificacion_id"onkeypress="return tabular(event,this)"required>
-                                        <option class="text-center" value="">  - Tipo -  </option>
+                                <div class="form-floating">
+                                    <select  class="form-select"  name="identificacion_id" id="identificacion_id" aria-placeholder="pais" onkeypress="return tabular(event,this)">
+                                        <option value=""></option>
                                         @foreach($identificaciones as $identificacion)
                                             <option value="{{ $identificacion['id'] }}">  {{ $identificacion['tipo'] }}  </option>
                                         @endforeach
                                     </select> 
-                                    
+                                    <label for="identificacion_id">Tipo ID</label>
+                                    @error('identificacion_id')
+                                        <small style="color:brown;">*{{$message}}</small>
+                                    @enderror
+                                    <br>
+                                </div>    
+
+
                             </div> 
                             <div class="col-md-6">
-                                <input  class="form-control"  type="string" name="numeroid" id="numeroid" placeholder="Numero ID"onkeypress="return tabular(event,this)"required>
+                                <div class="form-floating mb-6">
+                                    <input  class="form-control"  type="string" name="numeroid" id="numeroid" value="{{old('numeroid')}}" placeholder="Numero ID"onkeypress="return tabular(event,this)">
+                                    <label for="numeroid">Numero ID *</label>
+
+                                    @error('numeroid')
+                                        <small style="color:brown;">*{{$message}}</small>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <br>
 
-                    <div class="form-group">
-                    <label class="control-label col-sm-2" for="email">Hijos:</label>
-                  
-                            <input class="form-control" type="number" name="cantidad_hijos" id="cantidad_hijos" placeholder="Cantidad"  onkeypress="return tabular(event,this)"required>
-                            
-         
-          
-                    </div>
+                    
+
             </div>
 
             
             <div class="col" >
+            <div class="form-floating mb-6">      
+                        <input class="form-control" type="number" name="cantidad_hijos" id="cantidad_hijos" value="{{old('cantidad_hijos')}}"  placeholder="Cantidad"  onkeypress="return tabular(event,this)">
+                         <label  for="email"># Hijos</label>   
+                         <br>  
+                    </div>
+
+                <div class="form-floating mb-6">    
+                    <select class="form-select"  name="martial_id" id="martial_id"onkeypress="return tabular(event,this)">
+                        <option class="text-center" value="">  - Estado civil -  </option>
+                        @foreach($martials as $martial)
+                            <option value="{{ $martial['id'] }}">  {{ $martial['tipo'] }}  </option>
+                        @endforeach
+                    </select> 
+                    <label for="martial_id"> Estado civil</label>
+
+                    @error('martial_id')
+                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
+                    <br>
+                </div>
+
                 <div class="form-group">
-                    <p class="">Lugar de nacimiento (*):</p>
+                    <label >Lugar de nacimiento </label>
+                   
                     <div class="row">
                         <div class="col-md-6">
-                            <select class="form-select" name="pais_id" id="select-pais">
-                                <option class="text-center" value="">- País -</option>
-                                @foreach($paises as $pais)
-                                    <option value="{{$pais['id']}}" >
-                                        {{$pais->nombre}}
-                                    </option>
-                                @endforeach
-                            </select>
+
+                            <div  class="form-floating mb-6">
+                                <select class="form-select" name="pais_id" id="select-pais">
+                                    <option class="text-center" value=""></option>
+                                    @foreach($paises as $pais)
+                                        <option value="{{$pais['id']}}" >
+                                            {{$pais->nombre}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <label for="pais_id">País *</label>
+                                
+                                @error('pais_id')
+                                    <small style="color:brown;">*{{$message}}</small>
+                                @enderror
+                               
+                            </div>
+
                         </div>
+
+
                         <div class="col-md-6">
-                            <select class="form-select"  name="estado_id" id="select-estado" >
-                                <option  class="text-center" value="">- Estado -</option>
-                            </select>
+                            <div class="form-floating mb-6">
+
+                            
+                                <select class="form-select"  name="estado_id" id="select-estado" >
+                                    <option  class="text-center" value=""></option>
+                                </select>
+                                <label for="estado_id">Estado *</label>
+                                @error('estado_id')
+                                            <small style="color:brown;">*{{$message}}</small>
+                                 @enderror
+                                        
+                            </div>
                         </div>
                     </div>
                 </div>
                 <br>
 
+
+
                 <div class="form-group">
-                    <p class="">Lugar donde habita (*):</p>
+                    <label for="">Lugar donde habita</label>
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" placeholder="Ciudad" type="string" name="ciudad" id="ciudad" onkeypress="return tabular(event,this)"required>
+                            <div class="form-floating mb-6">
+                                <input class="form-control" value="{{old('ciudad')}}" placeholder="Ciudad" type="string" name="ciudad" id="ciudad" onkeypress="return tabular(event,this)">
+                                <label for="ciudad">Ciudad</label>
+                            </div>
                         </div>
 
                         <div class="col-md-6">
-                            <input class="form-control" placeholder="Comuna" type="string" name="Direccion" id="Direccion" onkeypress="return tabular(event,this)"required>
+                            <div class="form-floating mb-6">
+                                <input class="form-control" placeholder="Comuna" value="{{old('Direccion')}}" type="string" name="Direccion" id="Direccion" onkeypress="return tabular(event,this)">
+                                <label for="Direccion">Comuna</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,12 +208,17 @@ function tabular(e,obj)
 
                     <br>
                     <div class="form-group">
-                        <p class="">Adicciones (*): </p>
+                         <label for="">Adicción</label> 
                         <div class="row">
                             <div class="col-md-6">
-                            <input class="date form-control" type="text"  name="fechaa" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)">
 
+                                <div class="form-floating mb-6" >
+                                    <input class="date form-control" type="text"  name="fechaa" value="{{old('fechaa')}}" placeholder="Año-Mes-Día" autocomplete="off" onkeypress="return tabular(event,this)">
+                                    <label for="fechaa">Fecha </label>
+
+                                </div>
                             </div>
+
                             <div class="col-md-6">
                                 <select class="form-select"  name="addiction_id" id="addiction_id"onkeypress="return tabular(event,this)">
                                         <option class="text-center" value="">  - Adicciones -  </option>
@@ -139,14 +232,30 @@ function tabular(e,obj)
                         </div>
                     </div>
                     <br>
-                    <select  class="form-select" name="gender_id" id="gender_id"onkeypress="return tabular(event,this)">
-                        <option class="text-center" value="">  - Género -  </option>
-                        @foreach($genders as $gender)
-                            <option value="{{ $gender['id'] }}">  {{ $gender['tipo'] }}  </option>
-                        @endforeach
 
-                    </select> 
+                 
+
+                    
+            </div>            
+            <div class="col" >
+            <div class="form-floating mb-6">
+                        <select  class="form-select" name="gender_id" id="gender_id"  onkeypress="return tabular(event,this)">
+                            <option class="text-center" value="">  - Género -  </option>
+                            @foreach($genders as $gender)
+                                <option value="{{ $gender['id'] }}">  {{ $gender['tipo'] }}  </option>
+                            @endforeach
+                            
+
+                        </select> 
+                        <label for="gender_id">Género *</label>
+                        @error('gender_id')
+                                            <small style="color:brown;">*{{$message}}</small>
+                        @enderror
+                    </div>
                     <br>
+
+                <div class="form-floating mb-6">
+
                     <select class="form-select"  name="sex_id" id="sex_id"onkeypress="return tabular(event,this)">
                         <option class="text-center" value="">  - Sexo -  </option>
                         @foreach($sexes as $sex)
@@ -154,15 +263,15 @@ function tabular(e,obj)
                         @endforeach
 
                     </select> 
-                    <br>
-                    <select class="form-select"  name="martial_id" id="martial_id"onkeypress="return tabular(event,this)">
-                        <option class="text-center" value="">  - Estado civil -  </option>
-                        @foreach($martials as $martial)
-                            <option value="{{ $martial['id'] }}">  {{ $martial['tipo'] }}  </option>
-                        @endforeach
+                    <label for="sex_id">Sexo *</label>
+                    @error('sex_id')
+                                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
 
-                    </select> 
+                </div>
                     <br>
+
+                <div class="form-floating mb-6">
                     <select class="form-select"  name="occupation_id" id="occupation_id"onkeypress="return tabular(event,this)">
                         <option class="text-center" value="">  - Fuente de ingresos -  </option>
                         @foreach($occupations as $occupation)
@@ -170,17 +279,31 @@ function tabular(e,obj)
                         @endforeach
 
                     </select> 
+                    <label for="occupation_id">Ocupación *</label>
+                    @error('occupation_id')
+                        <small style="color:brown;">*{{$message}}</small>
+                    @enderror
                     <br>
-            </div>            
-            <div class="col" >
-                <label for="Nombre">Fotografía</label>
-                <input class="form-control" type="file" name="foto" id="foto" accept="image/*" required>
-                <br>
-                <div id="preview" style="height: 250px ;">
-                    <p class="text-center"> Imagen</p>
                 </div>
+                    <br>
+                <label for="foto">Fotografía</label>
+                <input class="form-control" type="file" name="foto" id="foto" accept="image/*" >
+                @error('foto')
+                         <small style="color:brown;">*{{$message}}</small>
+                        @enderror
+
                 <br>
+
                 <input  type="submit" value="Registrar" class="float-end btn btn-outline-success">
+                <br>
+                <br>
+                <div class="row">
+                <div id="preview" style="max-width: 250px ;">
+                    <p class="text-center"> Imagen</p>
+                </div></div>
+
+                <br>
+                
             </div>
 
 
@@ -200,7 +323,7 @@ function tabular(e,obj)
             if(input.files && input.files[0]){
                 var reader = new FileReader();
                 reader.onload=function(e){
-                    $('#preview').html("<img src='"+e.target.result+"'/>")
+                    $('#preview').html("<img  src='"+e.target.result+"'/>")
                 }
                 reader.readAsDataURL(input.files[0])
             }
