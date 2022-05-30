@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             SexSeeder::class,
             GenderSeeder::class,
             MartialSeeder::class,
-            
+            OccupationSeeder::class,
         ]);
         //\App\Models\User::factory(5)->create();
         

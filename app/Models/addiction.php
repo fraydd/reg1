@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class addiction extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombre'
+    ];
         // Relacion muchos a muchos usuario-addiction
 
         public function usuarios(){

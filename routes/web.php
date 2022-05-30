@@ -15,7 +15,8 @@ use App\Models\usuario;
 |
 */
 Route::get('usuario.index', [App\Http\Controllers\UsuarioController::class, 'index'])->name('uusers');
-Route::get('/usuario/{id}', [App\Http\Controllers\UsuarioController::class, 'create']);
+Route::get('usuario.{id}', [App\Http\Controllers\UsuarioController::class, 'create']);
+Route::get('show/{iden}', [App\Http\Controllers\UsuarioController::class, 'show'])->name('show');
 
 
 Route::resource('usuario',UsuarioController::class)->middleware('auth');
@@ -28,6 +29,8 @@ Auth::routes();//['register'=> false]
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/estadisticas', [App\Http\Controllers\EstadisticasController::class, 'index']);
+/* Route::post('/estadisticas/charts', [App\Http\Controllers\EstadisticasController::class, 'charts']); */
 Route::get('acercade', [App\Http\Controllers\AcercadeController::class, 'index']);
 Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'index']);
+
 

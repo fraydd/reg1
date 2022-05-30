@@ -1,21 +1,53 @@
 @extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <style>
+     .texto{
+         font-size: small;
+     }
+     .container-fluid {
+        height: 100vh ;
+}
+
+ </style>
 </head>
 <body>
-<div class="container" style="height: 400px; border: 1px solid #000; background: #fff"> 
-    <h1>Contacto</h1>
-    <br>
+
+<div class="container" style="min-height: 100vh;"> 
+    <div class="card-header">
+        <h3>Ponte en contacto con nosotros</h3>
+    </div>
     
+    <div class="card-body">
+
+        
+            <br>
+        <div class="row">
+            <div class="col-sm"><img src="images/mahecha.png" alt="aaa" width="85px" height="98px">
+            <p class="texto">Frey Camilo Mahecha</p>
+                <a class="texto" href="mailto:Freyc.mahechav@uqvirtual.edu.co">Freyc.mahechav@uqvirtual.edu.co </a>
+        </div>
+            <div class="col-sm"><img src="images/luis.png" alt="aaa" width="80px" height="98px">
+            <p class="texto" >Luis Manrique</p>
+                <a class="texto" href="mailto:Lemanriqueg@uqvirtual.edu.co">Lemanriqueg@uqvirtual.edu.co</a>
+        </div>
+            <div class="col-sm"><img src="images/clavijo.png" alt="aaa" width="80px" height="98px">
+            <p class="texto">Santiago Clavijo</p>
+            <a class="texto" href="mailto:Lemanriqueg@uqvirtual.edu.co">Lemanriqueg@uqvirtual.edu.co</a>
+        </div>
+            <div class="col-sm"><img src="images/fredy.png" alt="aaa" width="90px" height="98px">
+            <p class="texto">Fredy Chaves</p>
+            <a class="texto" href="mailto:fredya.chavesb@uqvirtual.edu.co">Fredya.chavesb@uqvirtual.edu.co</a>
+        </div>
+            <div class="col-sm"><img src="images/manajer.png" alt="aaa" width="90px" height="98px">
+            <p class="texto">Mauricio Grisales Garcia</p>
+            <a class="texto" href="mailto:mgrisalesg@uqvirtual.edu.co">mgrisalesg@uqvirtual.edu.co</a>
+        </div>
+
+        </div>
+    
+        </div>
 </div>
-</body>
-</html>
+
 @endsection

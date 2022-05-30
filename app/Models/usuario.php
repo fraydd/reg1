@@ -27,7 +27,8 @@ protected $fillable=[
         'identificacion_id',
         'gender_id',
         'sex_id',
-        'martial_id'
+        'martial_id',
+        'occupation_id'
 ];
 
     /* Query scopes para realizar filtrado*/
@@ -65,7 +66,11 @@ protected $fillable=[
     public function genders(){
         return $this->belongsTo(gender::class);
         }
-    
+
+    public function occupations(){
+        return $this->belongsTo(occupation::class);
+        }
+
     public function sexes(){
         return $this->belongsTo(sex::class);
         }

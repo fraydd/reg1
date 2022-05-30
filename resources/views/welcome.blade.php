@@ -21,28 +21,54 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                
             }
+            .imagen {
+                background-image: url(images/taxi.jpg);
+                background-size: 100% auto;
+                background-position: center 61%;
+                background-repeat: no-repeat;
+
+}
+            .fondo{
+                background-image: url(images/_MG_1317.jpg);
+                width: 100%;
+                height: 100%;
+                background-size: 100%;
+                position: absolute;
+               
+            }
+            .texto{
+                color: #FFF;
+                margin: 0 auto;
+                text-align: center;
+
+                font: italic bold 40px Georgia;
+                text-shadow: 1px 1px 0 red;
+            }
+
         </style>
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <body class="imagen">
+        <div class=" imagen relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/home') }} " style="color: #ffffff; text-decoration: underline red;" class=" text-sm underline" >Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}"  style="color: #ffffff; text-decoration: underline red; padding: 10px ;" class=" text-sm underline" >Ingresar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}"  style="color: #ffffff; text-decoration: underline red;" class=" text-sm underline" >Registrarse</a>
                         @endif
                     @endauth
                 </div>
             @endif
-    <div align="center" >
-        <img src="images/home.png" alt="aaa" width="1000" height="300"> 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sed laboriosam eum minus, quaerat consequatur voluptatem in numquam, dolor aliquam ducimus quod modi magnam reprehenderit non, fugit a laborum dicta.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem numquam veritatis velit dolores magnam fugiat fugit? Sapiente, voluptatum sint, molestiae impedit porro, aliquid ut eius mollitia quidem illum unde quibusdam!</p>
+            <h1 class="texto" > Registro de habitantes de calle de Armenia Quindío </h1> 
+            </div>
+    <div class="main" >
+        
+       
     </div>
     
     

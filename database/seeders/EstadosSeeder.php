@@ -5395,7 +5395,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>676,
-'pais_id'=>228,
+'pais_id'=>174,
 'nombre'=>'Solomon Islands'
 ] ;
 
@@ -5403,7 +5403,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>677,
-'pais_id'=>240,
+'pais_id'=>150,
 'nombre'=>'Vanuatu'
 ] ;
 
@@ -5419,7 +5419,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>679,
-'pais_id'=>223,
+'pais_id'=>190,
 'nombre'=>'Samoa'
 ] ;
 
@@ -5667,7 +5667,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>710,
-'pais_id'=>217,
+'pais_id'=>204,
 'nombre'=>'Rwanda'
 ] ;
 
@@ -5691,7 +5691,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>713,
-'pais_id'=>232,
+'pais_id'=>167,
 'nombre'=>'Sudan'
 ] ;
 
@@ -5699,7 +5699,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>714,
-'pais_id'=>234,
+'pais_id'=>163,
 'nombre'=>'Swaziland'
 ] ;
 
@@ -5715,7 +5715,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>716,
-'pais_id'=>236,
+'pais_id'=>161,
 'nombre'=>'Tonga'
 ] ;
 
@@ -5723,7 +5723,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>717,
-'pais_id'=>239,
+'pais_id'=>153,
 'nombre'=>'Tuvalu'
 ] ;
 
@@ -5731,7 +5731,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>718,
-'pais_id'=>242,
+'pais_id'=>146,
 'nombre'=>'Western Sahara'
 ] ;
 
@@ -5739,7 +5739,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>719,
-'pais_id'=>243,
+'pais_id'=>129,
 'nombre'=>'Yemen'
 ] ;
 
@@ -6499,7 +6499,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>816,
-'pais_id'=>246,
+'pais_id'=>118,
 'nombre'=>'Puerto Rico'
 ] ;
 
@@ -10483,7 +10483,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1404,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Acquaviva'
 ] ;
 
@@ -10491,7 +10491,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1405,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Chiesanuova'
 ] ;
 
@@ -10499,7 +10499,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1406,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Domagnano'
 ] ;
 
@@ -10507,7 +10507,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1407,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Faetano'
 ] ;
 
@@ -10515,7 +10515,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1408,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Fiorentino'
 ] ;
 
@@ -10523,7 +10523,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1409,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Borgo Maggiore'
 ] ;
 
@@ -10531,7 +10531,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1410,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'San Marino'
 ] ;
 
@@ -10539,7 +10539,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1411,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Monte Giardino'
 ] ;
 
@@ -10547,7 +10547,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1412,
-'pais_id'=>224,
+'pais_id'=>183,
 'nombre'=>'Serravalle'
 ] ;
 
@@ -11411,7 +11411,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1581,
-'pais_id'=>215,
+'pais_id'=>214,
 'nombre'=>'Adamstown'
 ] ;
 
@@ -11419,7 +11419,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1582,
-'pais_id'=>216,
+'pais_id'=>211,
 'nombre'=>'Doha'
 ] ;
 
@@ -11427,7 +11427,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1583,
-'pais_id'=>218,
+'pais_id'=>203,
 'nombre'=>'Jamestown'
 ] ;
 
@@ -11435,7 +11435,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1584,
-'pais_id'=>219,
+'pais_id'=>199,
 'nombre'=>'Basseterre'
 ] ;
 
@@ -11443,7 +11443,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1585,
-'pais_id'=>220,
+'pais_id'=>194,
 'nombre'=>'Castries'
 ] ;
 
@@ -11451,7 +11451,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1586,
-'pais_id'=>221,
+'pais_id'=>192,
 'nombre'=>'Saint Pierre'
 ] ;
 
@@ -11459,7 +11459,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1587,
-'pais_id'=>222,
+'pais_id'=>191,
 'nombre'=>'Kingstown'
 ] ;
 
@@ -11467,7 +11467,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1588,
-'pais_id'=>225,
+'pais_id'=>182,
 'nombre'=>'San Tome'
 ] ;
 
@@ -11475,7 +11475,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1589,
-'pais_id'=>226,
+'pais_id'=>179,
 'nombre'=>'Belgrade'
 ] ;
 
@@ -11483,7 +11483,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1590,
-'pais_id'=>227,
+'pais_id'=>177,
 'nombre'=>'Freetown'
 ] ;
 
@@ -11491,7 +11491,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1591,
-'pais_id'=>229,
+'pais_id'=>170,
 'nombre'=>'Mogadishu'
 ] ;
 
@@ -11499,7 +11499,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1592,
-'pais_id'=>235,
+'pais_id'=>162,
 'nombre'=>'Fakaofo'
 ] ;
 
@@ -11507,7 +11507,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1593,
-'pais_id'=>237,
+'pais_id'=>160,
 'nombre'=>'Port of Spain'
 ] ;
 
@@ -11515,7 +11515,7 @@ DB::table('estados')->insert($data); $data=[
 			
 DB::table('estados')->insert($data); $data=[
 'id'=>1594,
-'pais_id'=>241,
+'pais_id'=>148,
 'nombre'=>'Mata-Utu'
 ] ;
 

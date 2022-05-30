@@ -10,6 +10,7 @@ use App\usuarios;
 use Illuminate\Http\Request;
 use App\Models\identificacion;
 use App\Models\martial;
+use App\Models\occupation;
 use App\Models\pais;
 use App\Models\sex;
 use Illuminate\Auth\Access\Gate;
@@ -36,7 +37,7 @@ class UsuarioController extends Controller
             ->apellido($apellidos)
             ->numeroid($numeroid)
             //->scopeNumero($numero)
-            ->paginate(10);
+            ->paginate(100000);
 
         return view('usuarios.index',compact('uusers')); 
     }
@@ -46,7 +47,7 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
         /* abort_unless(\Gate::allows('Create'),401); */
         $identificaciones=identificacion::all();
@@ -57,6 +58,7 @@ class UsuarioController extends Controller
         $genders=gender::all();
         $sexes=sex::all();
         $martials=martial::all();
+        $occupations=occupation::all();
         return view('usuarios.create',compact(  'identificaciones',
                                                 'paises',
                                                 'estados',
@@ -64,6 +66,7 @@ class UsuarioController extends Controller
                                                 'genders',
                                                 'sexes',
                                                 'martials',
+                                                'occupations',
                                             ));
     }
 
@@ -79,6 +82,32 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'nombres'=>'required',
+            'apellidos'=>'required',
+            'fechan'=>'required',
+            'foto'=>'required',
+            'numeroid'=>'required',
+            'pais_id'=>'required',
+            'estado_id'=>'required',
+            'identificacion_id'=>'required',
+            'gender_id'=>'required',
+            'occupation_id'=>'required',
+            'sex_id'=>'required',
+            'martial_id'=>'required',
+            'foto'=>'required|image|mimes:jpeg,png,svg|max:1024'
+
+        ]);
+        $usu=$request->all();
+        
+        if($foto=$request->file('foto')){
+            $rutaGimg='images/';
+            $imgP=date('YmdHis').".".$foto->getClientOriginalExtension();
+            $foto->move($rutaGimg, $imgP);
+            $usu['foto']="$imgP";
+        }
+        
 /*         $data=request()->except('_token');
         if($request->hasFile('foto')){
             $data['foto']=$request->file('foto')->store('uploads','public');
@@ -88,7 +117,7 @@ class UsuarioController extends Controller
         }
         usuario::insert($data); */
      
-        usuario::create($request->all()); 
+        usuario::create($usu); 
         
 /*         $paises=pais::all();
         $estados=estado::all();
@@ -116,9 +145,25 @@ class UsuarioController extends Controller
      * @param  \App\Models\usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show(usuario $usuario)
+    public function show(int $iden)
     {
-        //
+        $usuario=usuario::find($iden);
+        $identificaciones=identificacion::find($usuario->identificacion_id);
+        $pais=pais::find($usuario->pais_id);
+        $estado=estado::find($usuario->estado_id);
+        $genero=gender::find($usuario->gender_id);
+        $sexo=sex::find($usuario->sex_id);
+        $ocupacion=occupation::find($usuario->occupation_id);
+        $civil=martial::find($usuario->martial_id);
+        return view('usuarios.show',compact('usuario',
+                                            'identificaciones',
+                                            'pais',
+                                            'estado',
+                                            'genero',
+                                            'sexo',
+                                            'ocupacion',
+                                            'civil',
+                                            ));    
     }
 
     /**

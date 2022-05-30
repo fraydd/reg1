@@ -2,7 +2,12 @@
 @section('content')
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+<style>
+    img {
+        width:  auto;
+        height: 250px;
+    }
+</style>
 <script> // este script hace que tabule el enter !!!
 function tabular(e,obj) 
         {
@@ -27,7 +32,7 @@ function tabular(e,obj)
 
 <body>
 
-<div class="container" style="height: 100vh ;"> 
+<div class="container" style="min-height: 100vh ;"> 
     <form class="form" action="{{ url('/usuario' )}}" method="post" enctype='multipart/form-data'>
         @csrf
         <div class="row" > 
@@ -158,10 +163,22 @@ function tabular(e,obj)
 
                     </select> 
                     <br>
+                    <select class="form-select"  name="occupation_id" id="occupation_id"onkeypress="return tabular(event,this)">
+                        <option class="text-center" value="">  - Fuente de ingresos -  </option>
+                        @foreach($occupations as $occupation)
+                            <option value="{{ $occupation['id'] }}">  {{ $occupation['nombre'] }}  </option>
+                        @endforeach
+
+                    </select> 
+                    <br>
             </div>            
             <div class="col" >
                 <label for="Nombre">Fotografía</label>
                 <input class="form-control" type="file" name="foto" id="foto" accept="image/*" required>
+                <br>
+                <div id="preview" style="height: 250px ;">
+                    <p class="text-center"> Imagen</p>
+                </div>
                 <br>
                 <input  type="submit" value="Registrar" class="float-end btn btn-outline-success">
             </div>
@@ -176,6 +193,23 @@ function tabular(e,obj)
 @section('script')
 
 <script src="/reg1\public\js\admin\usuario\crear.js"> </script>
+
+<script>
+    (function(){
+        function fpreview(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload=function(e){
+                    $('#preview').html("<img src='"+e.target.result+"'/>")
+                }
+                reader.readAsDataURL(input.files[0])
+            }
+        }
+        $('#foto').change(function(){
+            fpreview(this);
+        });
+    })();
+</script>
 
 @endsection
 

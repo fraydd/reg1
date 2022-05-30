@@ -18,4 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('usuarios', function(){
+    return datatables()
+    ->eloquent(App\Models\usuario::query())
+    ->addColumn('btn', 'actions')
+    ->rawColumns(['btn'])
+    ->toJson();
+});
+
 Route::get('/usuario/{id}/estados',[App\Http\Controllers\UsuarioController::class, 'getEstados']);

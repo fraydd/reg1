@@ -50,6 +50,11 @@ return new class extends Migration
                 ->references('id')
                 ->on('genders');
 
+            $table->unsignedBigInteger('occupation_id');
+            $table->foreign('occupation_id')
+                ->references('id')
+                ->on('occupations');
+
             $table->unsignedBigInteger('sex_id');
             $table->foreign('sex_id')
                 ->references('id')

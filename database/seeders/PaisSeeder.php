@@ -833,7 +833,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Mozambique'
         ] ;
         
-        
+        /* 118 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>119,
@@ -903,7 +903,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Barbados'
         ] ;
         
-        
+        /* 129 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>130,
@@ -1015,21 +1015,21 @@ class PaisSeeder extends Seeder
         'nombre'=>'Andorra'
         ] ;
         
-        
+        /* 146 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>147,
         'nombre'=>'Antigua y Barbuda'
         ] ;
         
-        
+        /* 148 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>149,
         'nombre'=>'Bangladesh'
         ] ;
         
-        
+        /* 150 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>151,
@@ -1043,7 +1043,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Bután'
         ] ;
         
-        
+        /* 153 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>154,
@@ -1085,7 +1085,10 @@ class PaisSeeder extends Seeder
         'nombre'=>'Cabo Verde'
         ] ;
         
-        
+        /* 160
+        161
+        162
+        163 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>164,
@@ -1106,7 +1109,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Cook, Islas'
         ] ;
         
-        
+        /* 167 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>168,
@@ -1120,7 +1123,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Djibouti, Yibuti'
         ] ;
         
-        
+        /* 170 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>171,
@@ -1141,7 +1144,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Eritrea'
         ] ;
         
-        
+        /* 174 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>175,
@@ -1155,14 +1158,14 @@ class PaisSeeder extends Seeder
         'nombre'=>'Fiyi'
         ] ;
         
-        
+        /* 177 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>178,
         'nombre'=>'Polinesia Francesa'
         ] ;
         
-        
+        /* 179 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>180,
@@ -1176,7 +1179,8 @@ class PaisSeeder extends Seeder
         'nombre'=>'Gambia'
         ] ;
         
-        
+        /* 182
+        183 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>184,
@@ -1218,14 +1222,16 @@ class PaisSeeder extends Seeder
         'nombre'=>'Guyana'
         ] ;
         
-        
+        /* 190
+        191
+        192 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>193,
         'nombre'=>'Jersey'
         ] ;
         
-        
+        /* 194 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>195,
@@ -1253,7 +1259,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Liberia'
         ] ;
         
-        
+        /* 199 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>200,
@@ -1274,7 +1280,8 @@ class PaisSeeder extends Seeder
         'nombre'=>'Mauricio'
         ] ;
         
-        
+        /* 203
+        204 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>205,
@@ -1316,7 +1323,7 @@ class PaisSeeder extends Seeder
         'nombre'=>'Níger'
         ] ;
         
-        
+        /* 211 */
                     
         DB::table('pais')->insert($data); $data=[
         'id'=>212,
@@ -1330,185 +1337,187 @@ class PaisSeeder extends Seeder
         'nombre'=>'Omán'
         ] ;
         
-        
+        /* 214 */
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>215,
+        'id'=>214,
         'nombre'=>'Isla Pitcairn'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>216,
+        'id'=>211,
         'nombre'=>'Qatar'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>217,
+        'id'=>204,
         'nombre'=>'Ruanda'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>218,
+        'id'=>203,
         'nombre'=>'Santa Elena'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>219,
+        'id'=>199,
         'nombre'=>'San Cristobal y Nevis'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>220,
+        'id'=>194,
         'nombre'=>'Santa Lucía'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>221,
+        'id'=>192,
         'nombre'=>'San Pedro y Miquelón'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>222,
+        'id'=>191,
         'nombre'=>'San Vincente y Granadinas'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>223,
+        'id'=>190,
         'nombre'=>'Samoa'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>224,
+        'id'=>183,
         'nombre'=>'San Marino'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>225,
+        'id'=>182,
         'nombre'=>'San Tomé y Príncipe'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>226,
+        'id'=>179,
         'nombre'=>'Serbia y Montenegro'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>227,
+        'id'=>177,
         'nombre'=>'Sierra Leona'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>228,
+        'id'=>174,
         'nombre'=>'Islas Salomón'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>229,
+        'id'=>170,
         'nombre'=>'Somalia'
         ] ;
         
-        
+        /* 230
+        231 */
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>232,
+        'id'=>167,
         'nombre'=>'Sudán'
         ] ;
         
-        
+        /* 233 */
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>234,
+        'id'=>163,
         'nombre'=>'Swazilandia'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>235,
+        'id'=>162,
         'nombre'=>'Tokelau'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>236,
+        'id'=>161,
         'nombre'=>'Tonga'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>237,
+        'id'=>160,
         'nombre'=>'Trinidad y Tobago'
         ] ;
         
-        
+        /* 238 */
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>239,
+        'id'=>153,
         'nombre'=>'Tuvalu'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>240,
+        'id'=>150,
         'nombre'=>'Vanuatu'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>241,
+        'id'=>148,
         'nombre'=>'Wallis y Futuna'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>242,
+        'id'=>146,
         'nombre'=>'Sáhara Occidental'
         ] ;
         
         
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>243,
+        'id'=>129,
         'nombre'=>'Yemen'
         ] ;
         
-        
+        /* 244
+        245 */
                     
         DB::table('pais')->insert($data); $data=[
-        'id'=>246,
+        'id'=>118,
         'nombre'=>'Puerto Rico'
         ] ;
         DB::table('pais')->insert($data);
